@@ -2,15 +2,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
         people.add(new Person("Michael", "Hamdan Mohamed bin Maktum al Ahmed", 40));
         people.add(new Person("Jack", "ibn Zaid Hadum", 10));
-        people.add(new Person("Connor", "al Abbod Hub", 75));
+        people.add(new Person("Connor", "al Abbod Hub", 15));
         people.add(new Person("Ramsan", "Kadyrov ibn Ahmed", 80));
-
+        people.removeIf(person -> person.getAge() < 18);
         Comparator<Person> comparator = (o1, o2) -> {
             int block = 2;
             String[] o1array = o1.getSurname().split(" ");

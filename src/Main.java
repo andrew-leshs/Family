@@ -28,5 +28,6 @@ public class Main {
         };
         Collections.sort(people, comparator);
         System.out.println(people);
+
     }
 }
